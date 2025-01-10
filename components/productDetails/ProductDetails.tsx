@@ -150,6 +150,28 @@ const ProductDetails = () => {
               </a>
             </div>
 
+            {/* Customize products */}
+        <div className="mt-2 select-none">
+          <div className="capitalize font-semibold my-3">color</div>
+          <ul className="flex gap-2 ">
+            <li className="bg-red-600 w-9 h-9 rounded-full"></li>
+            <li className="bg-pink-600 w-9 h-9 rounded-full"></li>
+            <li className="bg-yellow-600 w-9 h-9 rounded-full"></li>
+          </ul>
+          <div className="capitalize font-semibold my-3">Size</div>
+          <ul className="flex gap-2">
+            <li className="bg-blue-600 text-white flex items-center justify-center w-14 h-8 rounded-md uppercase">
+              sm
+            </li>
+            <li className="bg-pink-600 text-white flex items-center justify-center text-center w-14 h-8 rounded-md uppercase">
+              md
+            </li>
+            <li className="bg-yellow-600 text-white flex items-center justify-center text-center w-14 h-8 rounded-md uppercase">
+              lg
+            </li>
+          </ul>
+        </div>
+
             <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
             <p className="mb-6 text-gray-500 dark:text-gray-400">
