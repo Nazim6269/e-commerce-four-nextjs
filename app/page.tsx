@@ -10,6 +10,7 @@ export default function Home() {
         {/* Navbar */}
         <Navbar />
 
+        {/* Carousel */}
         <HeroCarousel />
 
         {/* Hero */}
