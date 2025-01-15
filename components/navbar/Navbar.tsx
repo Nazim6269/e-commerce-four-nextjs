@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import NavSearch from "./NavSearch";
+
 const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
@@ -5,75 +9,26 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="shrink-0">
-              <a href="#" title="" className="">
-                <img
-                  className="block w-auto h-8 dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
-                  alt=""
+              <Link aria-label="go to " href="#" title="" className="">
+                <Image
+                  height={156}
+                  width={180}
+                  src="/logo.png"
+                  alt="nav logo"
                 />
-                <img
-                  className="hidden w-auto h-8 dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
-                  alt=""
-                />
-              </a>
+              </Link>
             </div>
-
-            <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="shrink-0">
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Best Sellers
-                </a>
-              </li>
-              <li className="shrink-0">
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Gift Ideas
-                </a>
-              </li>
-              <li className="shrink-0">
-                <a
-                  href="#"
-                  title=""
-                  className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Today's Deals
-                </a>
-              </li>
-              <li className="shrink-0">
-                <a
-                  href="#"
-                  title=""
-                  className="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  Sell
-                </a>
-              </li>
-            </ul>
           </div>
+
+          {/* nave search  */}
+          <NavSearch />
 
           <div className="flex items-center lg:space-x-2">
             <button
               id="myCartDropdownButton1"
               data-dropdown-toggle="myCartDropdown1"
               type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+              className="inline-flex items-center rounded-sm justify-center p-2 border hover:border hover:border-orange-400 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 "
             >
               <span className="sr-only">Cart</span>
               <svg
@@ -87,9 +42,9 @@ const Navbar = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                 />
               </svg>
@@ -105,9 +60,9 @@ const Navbar = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m19 9-7 7-7-7"
                 />
               </svg>
@@ -119,12 +74,13 @@ const Navbar = () => {
             >
               <div className="grid grid-cols-2">
                 <div>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
                   >
                     Apple iPhone 15
-                  </a>
+                  </Link>
                   <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
                     $599
                   </p>
@@ -149,9 +105,9 @@ const Navbar = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </button>
@@ -168,12 +124,13 @@ const Navbar = () => {
 
               <div className="grid grid-cols-2">
                 <div>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
                   >
                     Apple iPad Air
-                  </a>
+                  </Link>
                   <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
                     $499
                   </p>
@@ -198,9 +155,9 @@ const Navbar = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </button>
@@ -217,12 +174,13 @@ const Navbar = () => {
 
               <div className="grid grid-cols-2">
                 <div>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
                   >
                     Apple Watch SE
-                  </a>
+                  </Link>
                   <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
                     $598
                   </p>
@@ -247,9 +205,9 @@ const Navbar = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </button>
@@ -266,12 +224,13 @@ const Navbar = () => {
 
               <div className="grid grid-cols-2">
                 <div>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
                   >
                     Sony Playstation 5
-                  </a>
+                  </Link>
                   <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
                     $799
                   </p>
@@ -296,9 +255,9 @@ const Navbar = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </button>
@@ -315,12 +274,13 @@ const Navbar = () => {
 
               <div className="grid grid-cols-2">
                 <div>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
                   >
                     Apple iMac 20"
-                  </a>
+                  </Link>
                   <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
                     $8,997
                   </p>
@@ -345,9 +305,9 @@ const Navbar = () => {
                       viewBox="0 0 24 24"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </button>
@@ -362,7 +322,8 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
                 title=""
                 className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -370,14 +331,14 @@ const Navbar = () => {
               >
                 {" "}
                 Proceed to Checkout{" "}
-              </a>
+              </Link>
             </div>
 
             <button
               id="userDropdownButton1"
               data-dropdown-toggle="userDropdown1"
               type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+              className="inline-flex items-center rounded-sm justify-center p-2 border hover:border hover:border-orange-400 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
             >
               <svg
                 className="w-5 h-5 me-1"
@@ -390,7 +351,7 @@ const Navbar = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                 />
               </svg>
@@ -406,9 +367,9 @@ const Navbar = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m19 9-7 7-7-7"
                 />
               </svg>
@@ -420,76 +381,83 @@ const Navbar = () => {
             >
               <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     My Account{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     My Orders{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     Settings{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     Favourites{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     Delivery Addresses{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
+                    aria-label="go to "
                     href="#"
                     title=""
                     className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                   >
                     {" "}
                     Billing Data{" "}
-                  </a>
+                  </Link>
                 </li>
               </ul>
 
               <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
-                <a
+                <Link
+                  aria-label="go to "
                   href="#"
                   title=""
                   className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                 >
                   {" "}
                   Sign Out{" "}
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -512,8 +480,8 @@ const Navbar = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeWidth="2"
                   d="M5 7h14M5 12h14M5 17h14"
                 />
               </svg>
@@ -527,52 +495,58 @@ const Navbar = () => {
         >
           <ul className="text-gray-900  text-sm font-medium dark:text-white space-y-3">
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Best Sellers
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Gift Ideas
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Games
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Electronics
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                aria-label="go to "
                 href="#"
-                className="hover:text-primary-700 dark:hover:text-primary-500"
+                className="hover:text-orange-700 "
               >
                 Home & Garden
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
