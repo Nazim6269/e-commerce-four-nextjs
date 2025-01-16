@@ -29,6 +29,14 @@ const Navbar = () => {
           <NavSearch />
 
           <div className="relative flex items-center lg:space-x-2">
+            <Link
+              aria-label="go to login"
+              href={"/login"}
+              type="submit"
+              className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400  focus:outline-none"
+            >
+              Login
+            </Link>
             <button
               onClick={() => setOpenCart((prev) => !prev)}
               id="myCartDropdownButton1"
