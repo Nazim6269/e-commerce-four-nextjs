@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const CartModal = () => {
   const router = useRouter();
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+    <div className="fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-50">
       {/* Modal Content */}
       <div className="relative w-full max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
         {/* Close Button */}
@@ -20,7 +20,7 @@ const Page = () => {
         </button>
 
         {/* Modal Content */}
-        <div className="relative z-10 mx-auto max-w-sm w-full space-y-4 overflow-hidden rounded-lg bg-white py-6 antialiased dark:bg-gray-800">
+        <div className="relative  mx-auto max-w-sm w-full space-y-4 overflow-hidden rounded-lg bg-white py-6 antialiased dark:bg-gray-800">
           {/* Item 1 */}
           <div className="grid grid-cols-2">
             <div>
@@ -95,7 +95,7 @@ const Page = () => {
 
           {/* Checkout Button */}
           <Link
-            href="#"
+            href="/checkout"
             className="block w-full rounded-lg bg-orange-400 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-orange-500"
             aria-label="Proceed to Checkout"
           >
@@ -107,4 +107,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default CartModal;

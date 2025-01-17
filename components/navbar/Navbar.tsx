@@ -4,9 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import NavSearch from "./NavSearch";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import CartModal from "../modal/CartModal";
 
 const Navbar = () => {
   const [openAccount, setOpenAccount] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+  const pathName = usePathname();
+  const mappedPath = pathName.split("/").join("");
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -28,6 +33,7 @@ const Navbar = () => {
           <NavSearch />
 
           <div className="relative flex items-center lg:space-x-2">
+            {/* login button */}
             <Link
               aria-label="go to login"
               href="/login"
@@ -35,49 +41,59 @@ const Navbar = () => {
             >
               Login
             </Link>
-            <Link
-              aria-label="go to cart"
-              href={"/cart"}
-              data-dropdown-toggle="myCartDropdown1"
-              className="inline-flex items-center rounded-sm justify-center p-2 border hover:border hover:border-orange-400 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 "
-            >
-              <span className="sr-only">Cart</span>
-              <svg
-                className="w-5 h-5 lg:me-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
+            {/* cart button */}
+
+            {mappedPath === "cart" ? null : (
+              <Link
+                aria-label="go to cart"
+                href={"/cart"}
+                data-dropdown-toggle="myCartDropdown1"
+                className="inline-flex items-center rounded-sm justify-center p-2 border hover:border hover:border-orange-400 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 "
               >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
-                />
-              </svg>
-              <span className="hidden sm:flex">My Cart</span>
-              <svg
-                className="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m19 9-7 7-7-7"
-                />
-              </svg>
-            </Link>
+                <span className="sr-only">Cart</span>
+                <svg
+                  className="w-5 h-5 lg:me-1"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                  />
+                </svg>
+                <span className="hidden sm:flex">My Cart</span>
+                <svg
+                  className="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </Link>
+            )}
+
+            {openCart && (
+              <div>
+                <CartModal />
+              </div>
+            )}
 
             <button
               onClick={() => setOpenAccount((prev) => !prev)}

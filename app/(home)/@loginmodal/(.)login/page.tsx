@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <>
       {
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+        <div className="fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-50">
           {/* Modal Content */}
           <div className="relative w-full max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
             {/* Close Button */}

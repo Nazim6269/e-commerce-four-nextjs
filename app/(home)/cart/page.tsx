@@ -1,11 +1,7 @@
 import OrderSummary from "@/components/orderSummary/OrderSummary";
 
 const page = () => {
-  return (
-    <div>
-      <OrderSummary />
-    </div>
-  );
+  return <OrderSummary />;
 };
 
 export default page;

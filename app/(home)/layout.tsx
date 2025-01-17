@@ -21,11 +21,10 @@ export const metadata: Metadata = {
 
 export default function HomeLayout({
   children,
-  cartModal,
   loginmodal,
 }: Readonly<{
   children: React.ReactNode;
-  cartModal: React.ReactNode;
+
   loginmodal: React.ReactNode;
 }>) {
   return (
@@ -34,7 +33,7 @@ export default function HomeLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {cartModal}
+
         {loginmodal}
         {children}
         <Footer />
