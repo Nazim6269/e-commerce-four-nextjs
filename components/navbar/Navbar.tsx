@@ -6,7 +6,6 @@ import NavSearch from "./NavSearch";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [openCart, setOpenCart] = useState(false);
   const [openAccount, setOpenAccount] = useState(false);
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
@@ -14,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="shrink-0">
-              <Link aria-label="go to " href="#" title="" className="">
+              <Link aria-label="go to " href="/" title="" className="">
                 <Image
                   height={156}
                   width={180}
@@ -31,17 +30,15 @@ const Navbar = () => {
           <div className="relative flex items-center lg:space-x-2">
             <Link
               aria-label="go to login"
-              href={"/login"}
-              type="submit"
-              className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400  focus:outline-none"
+              href="/login"
+              className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400"
             >
               Login
             </Link>
-            <button
-              onClick={() => setOpenCart((prev) => !prev)}
-              id="myCartDropdownButton1"
+            <Link
+              aria-label="go to cart"
+              href={"/cart"}
               data-dropdown-toggle="myCartDropdown1"
-              type="button"
               className="inline-flex items-center rounded-sm justify-center p-2 border hover:border hover:border-orange-400 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 "
             >
               <span className="sr-only">Cart</span>
@@ -80,176 +77,7 @@ const Navbar = () => {
                   d="m19 9-7 7-7-7"
                 />
               </svg>
-            </button>
-
-            {openCart && (
-              <div
-                id="myCartDropdown1"
-                className="z-10 absolute top-12 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800"
-              >
-                <div className="grid grid-cols-2">
-                  <div>
-                    <Link
-                      aria-label="go to "
-                      href="#"
-                      className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                    >
-                      Apple iPhone 15
-                    </Link>
-                    <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                      $599
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-end gap-6">
-                    <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                      Qty: 1
-                    </p>
-
-                    <button
-                      data-tooltip-target="tooltipRemoveItem1a"
-                      type="button"
-                      className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                    >
-                      <span className="sr-only"> Remove </span>
-                      <svg
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      id="tooltipRemoveItem1a"
-                      role="tooltip"
-                      className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                    >
-                      Remove item
-                      <div className="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2">
-                  <div>
-                    <Link
-                      aria-label="go to "
-                      href="#"
-                      className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                    >
-                      Apple iPad Air
-                    </Link>
-                    <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                      $499
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-end gap-6">
-                    <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                      Qty: 1
-                    </p>
-
-                    <button
-                      data-tooltip-target="tooltipRemoveItem2a"
-                      type="button"
-                      className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                    >
-                      <span className="sr-only"> Remove </span>
-                      <svg
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      id="tooltipRemoveItem2a"
-                      role="tooltip"
-                      className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                    >
-                      Remove item
-                      <div className="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2">
-                  <div>
-                    <Link
-                      aria-label="go to "
-                      href="#"
-                      className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                    >
-                      Apple Watch SE
-                    </Link>
-                    <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                      $598
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-end gap-6">
-                    <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                      Qty: 2
-                    </p>
-
-                    <button
-                      data-tooltip-target="tooltipRemoveItem3b"
-                      type="button"
-                      className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                    >
-                      <span className="sr-only"> Remove </span>
-                      <svg
-                        className="h-4 w-4"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      id="tooltipRemoveItem3b"
-                      role="tooltip"
-                      className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                    >
-                      Remove item
-                      <div className="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  aria-label="go to "
-                  href="#"
-                  title=""
-                  className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-orange-400 px-5 py-2.5 text-sm font-medium text-white"
-                  role="button"
-                  onClick={() => setOpenCart(false)}
-                >
-                  {" "}
-                  Proceed to Checkout{" "}
-                </Link>
-              </div>
-            )}
+            </Link>
 
             <button
               onClick={() => setOpenAccount((prev) => !prev)}

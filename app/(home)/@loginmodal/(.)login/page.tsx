@@ -1,28 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import Login from "@/components/login/Login";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Page = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
   const router = useRouter();
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    router.back();
-  };
 
   return (
     <>
-      {isModalOpen && (
+      {
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
           {/* Modal Content */}
           <div className="relative w-full max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
             {/* Close Button */}
             <button
-              onClick={closeModal}
+              onClick={() => router.back()}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               aria-label="Close Modal"
             >
@@ -45,7 +38,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      )}
+      }
     </>
   );
 };

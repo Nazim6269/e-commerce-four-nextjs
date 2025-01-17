@@ -19,20 +19,14 @@ export const metadata: Metadata = {
 
 export default function AuthLayout({
   children,
-  loginmodal,
-  registermodal,
 }: Readonly<{
   children: React.ReactNode;
-  loginmodal: React.ReactNode;
-  registermodal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {loginmodal}
-        {registermodal}
         {children}
       </body>
     </html>
