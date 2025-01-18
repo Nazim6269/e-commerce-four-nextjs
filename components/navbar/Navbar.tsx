@@ -6,8 +6,11 @@ import NavSearch from "./NavSearch";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import CartModal from "../modal/CartModal";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const session = useSession();
+
   const [openAccount, setOpenAccount] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const pathName = usePathname();
@@ -34,13 +37,24 @@ const Navbar = () => {
 
           <div className="relative flex items-center lg:space-x-2">
             {/* login button */}
-            <Link
-              aria-label="go to login"
-              href="/login"
-              className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400"
-            >
-              Login
-            </Link>
+            {session.data ? (
+              <Link
+                onClick={() => signOut()}
+                aria-label="go to login"
+                href="/login"
+                className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400"
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link
+                aria-label="go to login"
+                href="/login"
+                className="top-0 right-0 p-2 text-gray-900 text-md font-medium leading-none border select-none bg-white rounded-sm hover:border-orange-400"
+              >
+                Login
+              </Link>
+            )}
             {/* cart button */}
 
             {mappedPath === "cart" ? null : (

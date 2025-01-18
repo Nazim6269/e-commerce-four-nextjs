@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { auth } from "@/auth";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   description: "Try to practice",
 };
 
-export default function HomeLayout({
+export default async function HomeLayout({
   children,
   loginmodal,
 }: Readonly<{
@@ -27,16 +29,19 @@ export default function HomeLayout({
 
   loginmodal: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        <SessionProvider session={session}>
+          <Navbar />
 
-        {loginmodal}
-        {children}
-        <Footer />
+          {loginmodal}
+          {children}
+          <Footer />
+        </SessionProvider>
       </body>
     </html>
   );

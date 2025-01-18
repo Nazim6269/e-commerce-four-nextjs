@@ -1,15 +1,17 @@
 import Hero from "@/components/heroSection/Hero";
+import { connectMongo } from "@/services";
 
-export default function Home() {
+export default async function Home() {
+  await connectMongo();
+
   return (
-    <>
-      <div className="">
-        {/* Carousel */}
-        {/* <HeroCarousel /> */}
+    <div className="">
+      {/* Carousel */}
+      {/* <HeroCarousel /> */}
 
-        {/* Hero */}
-        <Hero />
-      </div>
-    </>
+      {/* Hero */}
+
+      <Hero />
+    </div>
   );
 }

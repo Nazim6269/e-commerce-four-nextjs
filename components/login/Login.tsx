@@ -1,3 +1,5 @@
+import SocialLogin from "./SocialLogin";
+
 const Login = () => {
   return (
     <form className="mt-6">
@@ -42,6 +44,7 @@ const Login = () => {
       >
         Login
       </button>
+      <SocialLogin />
     </form>
   );
 };
